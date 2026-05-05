@@ -6,7 +6,7 @@ const Collection = () => {
   const data = [
     { href: "/luxe-pret", video: "/videos/handwork.mp4", title: "Luxe Pret" },
     { href: "/silk-prints", video: "/videos/embroidery.mp4", title: "Silk Prints" },
-    { href: "/best-sellers", video: "/videos/best.mp4", title: "Best Sellers" },
+    { href: "/best-sellers", video: "/videos/resham.mp4", title: "Resham Suit" },
   ];
 
   return (
