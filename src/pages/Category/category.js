@@ -4,9 +4,9 @@ import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 const Collection = () => {
   const data = [
-    { href: "/luxe-pret", video: "/videos/handwork.mp4", title: "Mukesh Royale" },
-    { href: "/silk-prints", video: "/videos/saree.mp4", title: "Mukesh Luxe Veils" },
-    { href: "/best-sellers", video: "/videos/resham.mp4", title: "Resham by Mukesh" },
+    { href: "/mukeshroyale", video: "/videos/handwork.mp4", title: "Mukesh Royale" },
+    { href: "/featureproduct", video: "/videos/saree.mp4", title: "Mukesh Luxe Wears" },
+    { href: "/resham", video: "/videos/resham.mp4", title: "Resham by Mukesh" },
   ];
 
   return (

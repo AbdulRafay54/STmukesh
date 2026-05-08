@@ -1,10 +1,12 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const products = [
   {
     title: "2PC Unstitched Mukesh Work",
+    link: "/featureproduct",
     images: [
       "/images/card1(1).jpeg",
       "/images/card1(2).jpeg",
@@ -13,6 +15,7 @@ const products = [
   },
   {
     title: "Luxury Bridal Handwork Dupatta",
+    link: "/mukeshluxury",
     images: [
       "/images/bridal1(1).jpeg",
       "/images/bridal1(3).jpeg",
@@ -21,6 +24,7 @@ const products = [
   },
   {
     title: "Mukesh Silk Chikankari Set",
+    link: "/featureproduct",
     images: [
       "/images/chickenkari1(1).jpeg",
       "/images/chickenkari1(2).jpeg",
@@ -29,6 +33,7 @@ const products = [
   },
   {
     title: "Antique Gold Elegance",
+    link: "/featureproduct",
     images: [
       "/images/saree1(1).jpeg",
       "/images/saree1(2).jpeg",
@@ -40,7 +45,6 @@ const products = [
 export default function ProductGrid() {
   return (
     <section id="featured" className="w-full px-6 md:px-16 py-16 bg-[#f8f8f8]">
-
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl tracking-[5px] uppercase font-medium">
           Featured Products
@@ -58,8 +62,6 @@ export default function ProductGrid() {
 
 function ProductCard({ item }) {
   const [index, setIndex] = useState(0);
-
-  // 👉 swipe refs
   const startX = useRef(null);
 
   const next = (e) => {
@@ -69,45 +71,33 @@ function ProductCard({ item }) {
 
   const prev = (e) => {
     if (e) e.stopPropagation();
-    setIndex((prev) =>
-      prev === 0 ? item.images.length - 1 : prev - 1
-    );
+    setIndex((prev) => (prev === 0 ? item.images.length - 1 : prev - 1));
   };
 
-  // 👉 swipe start
   const handleStart = (x) => {
     startX.current = x;
   };
 
-  // 👉 swipe end
   const handleEnd = (x) => {
     if (!startX.current) return;
 
     const diff = startX.current - x;
 
-    if (diff > 50) next();   // swipe left
-    if (diff < -50) prev();  // swipe right
+    if (diff > 50) next();
+    if (diff < -50) prev();
 
     startX.current = null;
   };
 
   return (
-    <div className="group relative  cursor-pointer">
-
-      {/* CARD */}
+    <Link href={item.link} className="group relative cursor-pointer block">
       <div
-        className="  relative w-full aspect-[3/4] overflow-hidden rounded-1xl shadow-sm hover:shadow-xl transition-all duration-500"
-
-        // 👉 mouse swipe
+        className="relative w-full aspect-[3/4] overflow-hidden rounded-1xl shadow-sm hover:shadow-xl transition-all duration-500"
         onMouseDown={(e) => handleStart(e.clientX)}
         onMouseUp={(e) => handleEnd(e.clientX)}
-
-        // 👉 touch swipe
         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
         onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
       >
-
-        {/* IMAGE */}
         <Image
           src={item.images[index]}
           alt={item.title}
@@ -150,6 +140,6 @@ function ProductCard({ item }) {
           {item.title}
         </h3>
       </div>
-    </div>
+    </Link>
   );
 }

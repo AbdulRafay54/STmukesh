@@ -30,7 +30,7 @@ export default function About() {
         {/* IMAGE */}
         <div className="relative w-full h-[420px] rounded-2xl overflow-hidden bg-gray-100">
           <Image
-            src="/images/about1.jpg"
+            src="/images/about.jpeg"
             alt="About STMukesh"
             fill
             className="object-cover object-top"
@@ -100,7 +100,7 @@ export default function About() {
           <div>
             <div className="relative h-[360px] rounded-2xl overflow-hidden bg-white">
               <Image
-                src="/images/about1.jpg"
+                src="/images/about2.jpeg"
                 alt="Fabric Work"
                 fill
                 className="object-cover object-top"
@@ -120,7 +120,7 @@ export default function About() {
           <div>
             <div className="relative h-[360px] rounded-2xl overflow-hidden bg-white">
               <Image
-                src="/images/about4.jpg"
+                src="/images/saree1(3).jpeg"
                 alt="Custom Design"
                 fill
                 className="object-cover object-top"

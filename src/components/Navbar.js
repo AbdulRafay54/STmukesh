@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* RIGHT */}
         <div className="hidden md:flex gap-10">
           <Link
-            href="#"
+            href="/#featured"
             className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
           >
             New Arrivals
@@ -118,7 +118,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#"
+              href="/#featured"
               onClick={() => setOpen(false)}
               className="text-[16px] font-semibold text-gray-800"
             >

@@ -37,7 +37,7 @@ export default function Footer() {
                 <Link href="#collection">Collection</Link>
               </li>
               <li className="hover:text-black transition">
-                <Link href="/about" onClick={() => setOpen && setOpen(false)}>
+                <Link href="/about">
                   About Us
                 </Link>
               </li>
