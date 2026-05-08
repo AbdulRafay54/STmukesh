@@ -24,7 +24,7 @@ const products = [
   },
   {
     title: "Mukesh Silk Chikankari Set",
-    link: "/featureproduct",
+    link: "/resham",
     images: [
       "/images/chickenkari1(1).jpeg",
       "/images/chickenkari1(2).jpeg",
