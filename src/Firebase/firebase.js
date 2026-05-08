@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAGNZ9xgnx1pVgnzaRx-848NAQThGFK0DE",
@@ -18,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 // Auth add karo 👇
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-
+export const storage = getStorage(app); // YE ADD KARO
 // Analytics (optional safe check)
 export const analytics =
   typeof window !== "undefined" ? getAnalytics(app) : null;

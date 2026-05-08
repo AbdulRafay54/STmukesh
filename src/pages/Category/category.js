@@ -4,13 +4,13 @@ import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 const Collection = () => {
   const data = [
-    { href: "/luxe-pret", video: "/videos/handwork.mp4", title: "Luxe Pret" },
-    { href: "/silk-prints", video: "/videos/embroidery.mp4", title: "Silk Prints" },
-    { href: "/best-sellers", video: "/videos/resham.mp4", title: "Resham Suit" },
+    { href: "/luxe-pret", video: "/videos/handwork.mp4", title: "Mukesh Royale" },
+    { href: "/silk-prints", video: "/videos/saree.mp4", title: "Mukesh Luxe Veils" },
+    { href: "/best-sellers", video: "/videos/resham.mp4", title: "Resham by Mukesh" },
   ];
 
   return (
-    <section className="w-full bg-[#f8f8f8] py-16">
+    <section id="collection" className="w-full bg-[#f8f8f8] py-16">
       {/* HEADING */}
       <div className="text-center mb-12 px-4">
         <h2 className="text-[22px] md:text-[32px] tracking-[6px] uppercase text-gray-900 font-medium">

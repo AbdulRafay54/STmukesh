@@ -5,59 +5,56 @@ import { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const leftLinks = ["Shop", "Collections"];
-  const rightLinks = ["New Arrivals", "Sale"];
-
-  const subLinks = [
-    "Embroidered Suits",
-    "Chunri",
-    "Formal Wear",
-    "Festive Edit",
-  ];
-
   return (
     <nav className="w-full bg-white border-b border-gray-200">
-
       {/* TOP BAR */}
       <div className="relative flex items-center justify-between px-6 md:px-16 py-7">
-
         {/* LEFT */}
         <div className="hidden md:flex gap-10">
-          {leftLinks.map((item) => (
-            <Link
-              key={item}
-              href="#"
-              className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
-            >
-              {item}
-            </Link>
-          ))}
+          <Link
+            href="/#"
+            className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
+          >
+            Shop
+          </Link>
+
+          <Link
+            href="#collection"
+            className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
+          >
+            Collections
+          </Link>
         </div>
 
-        {/* CENTER LOGO */}
+        {/* LOGO */}
         <div className="absolute left-1/2 -translate-x-1/2">
-          <div className="w-[220px] md:w-[300px] h-[100px] relative">
+          <div className="relative w-[220px] md:w-[300px] h-[100px]">
             <Image
               src="/images/logo.png"
               alt="logo"
               fill
-              className="object-contain"
               priority
+              className="object-contain"
             />
           </div>
         </div>
 
         {/* RIGHT */}
         <div className="hidden md:flex gap-10">
-          {rightLinks.map((item) => (
-            <Link
-              key={item}
-              href="#"
-              className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
-            >
-              {item}
-            </Link>
-          ))}
+          <Link
+            href="#"
+            className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
+          >
+            New Arrivals
+          </Link>
+
+          <Link
+           href="https://wa.me/923192772962?text=Hi%20I%20want%20to%20see%20your%20catalogue"
+            target="_blank"
+            className="text-[14px] font-semibold tracking-[2px] uppercase text-gray-700 hover:text-black hover:tracking-[3px] transition-all duration-300"
+          >
+            Sale
+          </Link>
         </div>
 
         {/* MOBILE BUTTON */}
@@ -71,43 +68,107 @@ export default function Navbar() {
 
       {/* SUB NAV */}
       <div className="hidden md:flex justify-center gap-12 py-5 border-t border-gray-100">
-        {subLinks.map((item) => (
-          <p
-            key={item}
-            className="text-[12px] font-medium tracking-[4px] uppercase text-gray-500 hover:text-black cursor-pointer transition"
-          >
-            {item}
-          </p>
-        ))}
+        <Link
+          href="/mukeshroyale"
+          className="text-[12px] font-medium tracking-[4px] uppercase text-gray-500 hover:text-black transition"
+        >
+          Mukesh Royale
+        </Link>
+
+        <Link
+          href="/mukeshluxury"
+          className="text-[12px] font-medium tracking-[4px] uppercase text-gray-500 hover:text-black transition"
+        >
+          Mukesh Luxe Veils
+        </Link>
+
+        <Link
+          href="/resham"
+          className="text-[12px] font-medium tracking-[4px] uppercase text-gray-500 hover:text-black transition"
+        >
+          Resham by Mukesh
+        </Link>
+
+        <Link
+          href="/featureproduct"
+          className="text-[12px] font-medium tracking-[4px] uppercase text-gray-500 hover:text-black transition"
+        >
+          Featured Products
+        </Link>
       </div>
 
       {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden px-6 py-6 border-t bg-white">
-
           <div className="flex flex-col gap-6">
-            {[...leftLinks, ...rightLinks].map((item) => (
-              <Link
-                key={item}
-                href="#"
-                className="text-[16px] font-semibold text-gray-800"
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              href="/#"
+              onClick={() => setOpen(false)}
+              className="text-[16px] font-semibold text-gray-800"
+            >
+              Shop
+            </Link>
+
+            <Link
+              href="/#collection"
+              onClick={() => setOpen(false)}
+              className="text-[16px] font-semibold text-gray-800"
+            >
+              Collections
+            </Link>
+
+            <Link
+              href="#"
+              onClick={() => setOpen(false)}
+              className="text-[16px] font-semibold text-gray-800"
+            >
+              New Arrivals
+            </Link>
+
+            <Link
+               href="https://wa.me/923192772962?text=Hi%20I%20want%20to%20see%20your%20catalogue"
+              target="_blank"
+              onClick={() => setOpen(false)}
+              className="text-[16px] font-semibold text-gray-800"
+            >
+              Sale
+            </Link>
           </div>
 
           <hr className="my-6 border-gray-900" />
 
           <div className="flex flex-col gap-3">
-            {subLinks.map((item) => (
-              <p
-                key={item}
-                className="text-[12px] uppercase tracking-[4px] text-gray-600"
-              >
-                {item}
-              </p>
-            ))}
+            <Link
+              href="/mukeshroyale"
+              onClick={() => setOpen(false)}
+              className="text-[12px] uppercase tracking-[4px] text-gray-600"
+            >
+              Mukesh Royale
+            </Link>
+
+            <Link
+              href="/mukeshluxury"
+              onClick={() => setOpen(false)}
+              className="text-[12px] uppercase tracking-[4px] text-gray-600"
+            >
+              Mukesh Luxe Veils
+            </Link>
+
+            <Link
+              href="/resham"
+              onClick={() => setOpen(false)}
+              className="text-[12px] uppercase tracking-[4px] text-gray-600"
+            >
+              Resham by Mukesh
+            </Link>
+
+            <Link
+              href="/featureproduct"
+              onClick={() => setOpen(false)}
+              className="text-[12px] uppercase tracking-[4px] text-gray-600"
+            >
+              Featured Products
+            </Link>
           </div>
         </div>
       )}

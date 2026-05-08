@@ -2,11 +2,25 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function HeroCarousel() {
+
+  // ✅ UPDATED SLIDES (desktop + mobile)
   const slides = [
-    "/images/slide1.jpeg",
-    "/images/slide2.jpeg",
-    "/images/slide3.jpeg",
-    "/images/slide4.jpeg",
+    {
+      desktop: "/images/landscape1.jpeg",
+      mobile: "/images/potrait1.jpeg",
+    },
+    {
+      desktop: "/images/landscape2.jpeg",
+      mobile: "/images/potraitimg2.jpeg",
+    },
+    {
+      desktop: "/images/landscape3.jpeg",
+      mobile: "/images/potrait3.jpeg",
+    },
+    {
+      desktop: "/images/landscape4.jpeg",
+      mobile: "/images/potrait4.jpeg",
+    },
   ];
 
   const [index, setIndex] = useState(1);
@@ -14,6 +28,7 @@ export default function HeroCarousel() {
 
   const startX = useRef(null);
 
+  // ✅ SAME LOOP LOGIC (no change)
   const extended = [
     slides[slides.length - 1],
     ...slides,
@@ -29,7 +44,7 @@ export default function HeroCarousel() {
     return () => clearInterval(id);
   }, []);
 
-  // FIX LOOP WITHOUT BLACK FRAME
+  // loop fix
   const onTransitionEnd = () => {
     if (index === extended.length - 1) {
       setTransition(false);
@@ -42,7 +57,6 @@ export default function HeroCarousel() {
     }
   };
 
-  // re-enable transition after snap
   useEffect(() => {
     if (!transition) {
       const t = setTimeout(() => setTransition(true), 50);
@@ -84,15 +98,31 @@ export default function HeroCarousel() {
         }}
         onTransitionEnd={onTransitionEnd}
       >
-        {extended.map((img, i) => (
+        {extended.map((slide, i) => (
           <div key={i} className="min-w-full h-full relative bg-black">
+
+            {/* ✅ Desktop Image */}
             <Image
-              src={img}
+              src={slide.desktop}
               alt="slide"
               fill
               priority
-              className="object-cover"
+              quality={100}
+              sizes="100vw"
+              className="object-cover hidden md:block"
             />
+
+            {/* ✅ Mobile Image */}
+            <Image
+              src={slide.mobile}
+              alt="slide"
+              fill
+              priority
+              quality={100}
+              sizes="100vw"
+              className="object-cover block md:hidden"
+            />
+
           </div>
         ))}
       </div>
@@ -112,7 +142,7 @@ export default function HeroCarousel() {
         ›
       </button>
 
-      {/* dots FIXED */}
+      {/* dots */}
       <div className="absolute bottom-6 w-full flex justify-center gap-3">
         {slides.map((_, i) => (
           <div
