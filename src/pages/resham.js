@@ -39,7 +39,7 @@ export default function Resham() {
         {/* HEADING */}
         <div className="text-center mb-10">
           <h1 className="text-2xl md:text-3xl tracking-[5px] uppercase font-medium">
-            Resham Collection
+            Resham By Mukesh
           </h1>
         </div>
 
