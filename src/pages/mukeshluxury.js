@@ -39,7 +39,7 @@ export default function Resham() {
         {/* HEADING */}
         <div className="text-center mb-10">
           <h1 className="text-2xl md:text-3xl tracking-[5px] uppercase font-medium">
-            Mukesh Luxe Veils
+            Mukesh Luxe Studio
           </h1>
         </div>
 
@@ -110,7 +110,7 @@ function ProductCard({ item, onOpen }) {
     <div className="group relative cursor-pointer" onClick={onOpen}>
       {/* CARD */}
       <div
-        className="relative w-full aspect-[3/4] overflow-hidden rounded-[24px] shadow-sm hover:shadow-2xl transition-all duration-500 bg-white"
+        className="relative w-full aspect-[3/4] overflow-hidden  shadow-sm hover:shadow-2xl transition-all duration-500 bg-white"
         onMouseDown={(e) => handleStart(e.clientX)}
         onMouseUp={(e) => handleEnd(e.clientX)}
         onTouchStart={(e) => handleStart(e.touches[0].clientX)}

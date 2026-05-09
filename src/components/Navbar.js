@@ -79,7 +79,7 @@ export default function Navbar() {
           href="/mukeshluxury"
           className="text-[12px] font-medium tracking-[4px] uppercase text-gray-500 hover:text-black transition"
         >
-          Mukesh Luxe Veils
+          Mukesh Luxe Studio
         </Link>
 
         <Link
@@ -151,7 +151,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="text-[12px] uppercase tracking-[4px] text-gray-600"
             >
-              Mukesh Luxe Veils
+              Mukesh Luxe Studio
             </Link>
 
             <Link

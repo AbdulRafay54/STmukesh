@@ -110,7 +110,7 @@ function ProductCard({ item, onOpen }) {
     <div className="group relative cursor-pointer" onClick={onOpen}>
       {/* CARD */}
       <div
-        className="relative w-full aspect-[3/4] overflow-hidden rounded-[24px] shadow-sm hover:shadow-2xl transition-all duration-500 bg-white"
+        className="relative w-full aspect-[3/4] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 bg-white"
         onMouseDown={(e) => handleStart(e.clientX)}
         onMouseUp={(e) => handleEnd(e.clientX)}
         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
