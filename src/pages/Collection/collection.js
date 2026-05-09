@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const products = [
   {
     title: "2PC Unstitched Mukesh Work",
-    link: "/featureproduct",
+    link: "/mukeshluxury",
     images: [
       "/images/card1(1).jpeg",
       "/images/card1(2).jpeg",
