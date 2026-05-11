@@ -39,7 +39,7 @@ export default function Resham() {
         {/* HEADING */}
         <div className="text-center mb-10">
           <h1 className="text-2xl md:text-3xl tracking-[5px] uppercase font-medium">
-           Featured Products
+            Featured Products
           </h1>
         </div>
 
@@ -234,7 +234,9 @@ function ProductModal({ item, onClose }) {
           <div className="w-full px-7 md:px-16 py-12 md:py-20">
             {/* COLLECTION */}
             <p className="uppercase tracking-[6px] text-[11px] font-semibold text-[#9a7b5f] mb-4">
-              Premium Resham Collection
+              {item.category
+                ?.replace(/-/g, " ")
+                .replace(/\b\w/g, (l) => l.toUpperCase())}
             </p>
 
             {/* TITLE */}
